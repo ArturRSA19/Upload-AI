@@ -1,17 +1,25 @@
-import {Github, FileVideo, Upload, Wand2} from 'lucide-react'
+import {Github, FileVideo, Upload, Wand2, PlayCircle} from 'lucide-react'
 import { Button } from "./components/ui/button"
 import { Separator } from './components/ui/separator'
 import { Textarea } from './components/ui/textarea'
 import { Label } from './components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select'
 import { Slider } from './components/ui/slider'
+import React from 'react'
 
 
 export function App() {
   return (
     <div className='min-h-screen flex flex-col'>
       <div className="px-6 py-3 flex items-center justify-between border-b">
-        <h1 className="text-xl font-bold">upload.ai</h1>
+
+        <div className='flex items-center gap-3'>
+          <PlayCircle className='w-4 h-4 mr-2'/>
+
+          <Separator orientation='vertical' className='h-6'/>
+          
+          <h1 className="text-xl font-bold">upload.ai</h1>
+        </div>
 
         <div className="flex items-center gap-3">
           <span className="text-sm text-muted-foreground">Torne suas decisões mais inteligentes 🚀</span>
@@ -111,7 +119,7 @@ export function App() {
               <Slider 
                 min={0}
                 max={1}
-                step={0.1}
+                step={0.01}
               />
               <span className='block text-muted-foreground text-xs italic leading-relaxed'>
                 Valores mais altos tendem a deixar o resultado mais criativo, mas menos preciso.
